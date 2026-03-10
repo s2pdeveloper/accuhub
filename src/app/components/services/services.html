@@ -78,6 +78,25 @@
         </div>
     </div>
 
+    <!-- Registrations & Compliance Details -->
+    <div class="service-section alt-bg" id="registrations">
+        <div class="service-section-header">
+            <span class="section-label">04 — Registrations</span>
+            <h2 class="section-title">Registrations &amp; Compliance</h2>
+            <p class="section-subtitle">End-to-end registration and licensing support to keep your business legally
+                compliant from day one.</p>
+        </div>
+        <div class="detail-grid">
+            @for (svc of registrationServices; track svc.num) {
+            <div class="detail-card">
+                <span class="detail-num">{{ svc.num }}</span>
+                <h4 class="detail-title">{{ svc.title }}</h4>
+                <p class="detail-desc">{{ svc.desc }}</p>
+            </div>
+            }
+        </div>
+    </div>
+
     <!-- Finance Details -->
     <div class="service-section" id="finance">
         <div class="service-section-header">

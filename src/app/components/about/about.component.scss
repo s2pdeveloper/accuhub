@@ -41,18 +41,26 @@
 .img-card {
     position: absolute;
     inset: 0;
-    background: var(--bg-light);
+    background: rgb(15 45 82 / 97%);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-md);
+
+    .about-logo-img {
+        width: 70%;
+        max-width: 220px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
 }
 
 .stat-pill {
     position: absolute;
-    background: var(--bg-white);
+    background: linear-gradient(135deg, #e8a020 0%, #f0b840 100%);
     border: 1px solid var(--border);
     border-radius: var(--radius-full);
     padding: 0.6rem 1.2rem;

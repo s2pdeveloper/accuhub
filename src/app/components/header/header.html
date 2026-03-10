@@ -1,15 +1,7 @@
 <header class="header">
     <div class="header-inner">
         <a href="#" class="logo" (click)="closeMenu()" aria-label="Acchub Capital home">
-            <span class="logo-icon" aria-hidden="true">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="8" fill="#e8a020" />
-                    <path d="M8 22L16 10L24 22" stroke="white" stroke-width="2.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M10.5 18h11" stroke="white" stroke-width="2.5" stroke-linecap="round" />
-                </svg>
-            </span>
-            <span class="logo-text">Acchub <span>Capital</span></span>
+            <img src="assets/acchub-logo.png" alt="Acchub Capital" class="logo-img" />
         </a>
 
         <nav class="nav" [class.open]="menuOpen()" aria-label="Main navigation">

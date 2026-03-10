@@ -29,12 +29,12 @@
   gap: 0.75rem;
 }
 
-.ft-logo-text {
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-family: var(--font-heading);
-  color: #fff;
-  letter-spacing: -0.02em;
+.ft-logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
 }
 
 .ft-tagline {
@@ -129,6 +129,21 @@
 
 .ft-credit strong {
   color: var(--accent);
+}
+
+.ft-credit-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  strong {
+    color: var(--accent);
+    transition: color 0.2s;
+  }
+
+  &:hover strong {
+    color: #fff;
+  }
 }
 
 @media (max-width: 1024px) {

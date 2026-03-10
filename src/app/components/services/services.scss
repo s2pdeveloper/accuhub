@@ -30,7 +30,7 @@
 /* Category cards */
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 3rem 1.5rem;
@@ -215,6 +215,12 @@
     font-size: 0.88rem;
     color: var(--text-mid);
     line-height: 1.6;
+}
+
+@media (max-width: 1280px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 1024px) {

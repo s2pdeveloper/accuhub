@@ -1,7 +1,8 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 interface ServiceCategory {
-  icon: string;
+  icon: SafeHtml;
   label: string;
   title: string;
   description: string;
@@ -17,9 +18,16 @@ interface ServiceCategory {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Services {
+  private readonly sanitizer = inject(DomSanitizer);
+  private s(svg: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(svg);
+  }
+
   protected readonly categories: ServiceCategory[] = [
     {
-      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3M9 7V5a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2h-2M9 7h2a2 2 0 012 2v1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      icon: this.s(
+        `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3M9 7V5a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2h-2M9 7h2a2 2 0 012 2v1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      ),
       label: 'Accounting',
       title: 'Accounting Services',
       description:
@@ -38,7 +46,9 @@ export class Services {
       anchor: '#accounting',
     },
     {
-      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 14l2 2 4-4m-4-2a7 7 0 100 14A7 7 0 009 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 2H9a1 1 0 00-1 1v2a1 1 0 001 1h6a1 1 0 001-1V3a1 1 0 00-1-1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      icon: this.s(
+        `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 14l2 2 4-4m-4-2a7 7 0 100 14A7 7 0 009 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 2H9a1 1 0 00-1 1v2a1 1 0 001 1h6a1 1 0 001-1V3a1 1 0 00-1-1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      ),
       label: 'Tax',
       title: 'Tax Services',
       description:
@@ -55,7 +65,9 @@ export class Services {
       anchor: '#tax',
     },
     {
-      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      icon: this.s(
+        `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      ),
       label: 'Finance',
       title: 'Finance Services',
       description:
@@ -70,6 +82,27 @@ export class Services {
         'Restructuring & Refinancing',
       ],
       anchor: '#finance',
+    },
+    {
+      icon: this.s(
+        `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12h6M9 16h6M7 4H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2M9 4a2 2 0 002 2h2a2 2 0 002-2M9 4a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      ),
+      label: 'Registrations',
+      title: 'Registrations & Compliance',
+      description:
+        'End-to-end registration and licensing support to keep your business legally compliant from day one.',
+      items: [
+        'PAN & TAN Application',
+        'Gumasta (Shop Act) License',
+        'Udyam Aadhaar / MSME Registration',
+        'GST Registration',
+        'Professional Tax Registration',
+        'PF & ESIC Registration',
+        'Partnership Deed / LLP Formation',
+        'Company Incorporation',
+        'Food License (FSSAI)',
+      ],
+      anchor: '#registrations',
     },
   ];
 
@@ -184,6 +217,54 @@ export class Services {
       num: '06',
       title: 'Credit Assessment & Rating',
       desc: 'Credit health analysis and guidance on improving creditworthiness.',
+    },
+  ];
+
+  protected readonly registrationServices = [
+    {
+      num: '01',
+      title: 'PAN & TAN Application',
+      desc: 'Hassle-free application and processing of PAN and TAN for individuals and businesses.',
+    },
+    {
+      num: '02',
+      title: 'Gumasta (Shop Act) License',
+      desc: 'Registration under the Shops & Establishment Act for your business premises.',
+    },
+    {
+      num: '03',
+      title: 'Udyam Aadhaar / MSME Registration',
+      desc: 'Online MSME/Udyam registration to unlock government schemes and priority lending.',
+    },
+    {
+      num: '04',
+      title: 'GST Registration',
+      desc: 'Complete GST registration assistance for regular and composition taxpayers.',
+    },
+    {
+      num: '05',
+      title: 'Professional Tax Registration',
+      desc: 'State-level professional tax enrollment for employers and self-employed professionals.',
+    },
+    {
+      num: '06',
+      title: 'PF & ESIC Registration',
+      desc: 'Provident Fund and Employee State Insurance registration for compliant workforce management.',
+    },
+    {
+      num: '07',
+      title: 'Partnership Deed / LLP Formation',
+      desc: 'Drafting partnership deeds and end-to-end LLP incorporation with MCA filings.',
+    },
+    {
+      num: '08',
+      title: 'Company Incorporation',
+      desc: 'Private Ltd / OPC / Section 8 company formation including MCA, DSC, and DIN processing.',
+    },
+    {
+      num: '09',
+      title: 'Food License (FSSAI)',
+      desc: 'Basic, State, and Central FSSAI license registration for food businesses.',
     },
   ];
 }
