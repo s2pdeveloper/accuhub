@@ -1,0 +1,101 @@
+<section class="contact" id="contact">
+    <div class="contact-inner">
+        <div class="contact-left">
+            <span class="section-label">Contact Us</span>
+            <h2 class="section-title">Let's Work <span class="text-accent">Together</span></h2>
+            <p class="contact-sub">Reach out for a free consultation. Our experts are ready to help you navigate your
+                financial goals.</p>
+
+            <div class="contact-details">
+                <div class="cd-item">
+                    <div class="cd-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <div class="cd-text">
+                        <span class="cd-label">Office</span>
+                        <span class="cd-value">Block no. 33 &amp; 34, Shriram Tower,<br>LIC Square Sadar,
+                            Nagpur&nbsp;–&nbsp;440001</span>
+                    </div>
+                </div>
+
+                <div class="cd-item">
+                    <div class="cd-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 4.18 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                    </div>
+                    <div class="cd-text">
+                        <span class="cd-label">Phone</span>
+                        <a href="tel:9028100765" class="cd-value">+91 90281 00765</a>
+                        <a href="tel:7066100765" class="cd-value">+91 70661 00765</a>
+                    </div>
+                </div>
+
+                <div class="cd-item">
+                    <div class="cd-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <div class="cd-text">
+                        <span class="cd-label">Email</span>
+                        <a href="mailto:Acchub@gmail.com" class="cd-value">Acchub&#64;gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-right">
+            <div class="contact-form-card">
+                <h3 class="form-title">Request a Free Quote</h3>
+                <form class="contact-form" (submit)="$event.preventDefault()">
+                    <div class="form-row">
+                        <div class="field-wrap">
+                            <label for="c-name">Full Name</label>
+                            <input id="c-name" type="text" placeholder="John Doe" autocomplete="name" />
+                        </div>
+                        <div class="field-wrap">
+                            <label for="c-email">Email Address</label>
+                            <input id="c-email" type="email" placeholder="john@example.com" autocomplete="email" />
+                        </div>
+                    </div>
+                    <div class="field-wrap">
+                        <label for="c-phone">Phone Number</label>
+                        <input id="c-phone" type="tel" placeholder="+91 98765 00000" autocomplete="tel" />
+                    </div>
+                    <div class="field-wrap">
+                        <label for="c-service">Service Required</label>
+                        <select id="c-service">
+                            <option value="">Select a service...</option>
+                            <option>Accounting &amp; Bookkeeping</option>
+                            <option>GST Filing &amp; Compliance</option>
+                            <option>Income Tax Returns</option>
+                            <option>Company Registration</option>
+                            <option>Financial Advisory</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="field-wrap">
+                        <label for="c-msg">Your Message</label>
+                        <textarea id="c-msg" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Send Message
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="ts-header">
+            <span class="section-label">Client Stories</span>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Trusted by hundreds of businesses across Nagpur and beyond for financial
+                excellence.</p>
+        </div>
+
+        <div class="ts-grid">
+            @for (t of testimonials; track t.name) {
+            <article class="ts-card">
+                <div class="ts-quote" aria-hidden="true">
+                    <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 24V14.4C0 10.08 1.2 6.48 3.6 3.6 6.08 0.72 9.36 0 12.48 0L14.4 3.12C12 3.6 10.08 4.8 8.64 6.72 7.2 8.56 6.48 10.56 6.48 12.72H12V24H0zm17.52 0V14.4c0-4.32 1.2-7.92 3.6-10.8C23.6.72 26.88 0 30 0L32 3.12c-2.4.48-4.32 1.68-5.76 3.6-1.44 1.84-2.16 3.84-2.16 6H30V24H17.52z"
+                            fill="currentColor" opacity="0.15" />
+                    </svg>
+                </div>
+                <p class="ts-text">{{ t.text }}</p>
+                <div class="ts-author">
+                    <div class="ts-avatar" [style.background]="t.color" aria-hidden="true">{{ t.initials }}</div>
+                    <div class="ts-info">
+                        <span class="ts-name">{{ t.name }}</span>
+                        <span class="ts-role">{{ t.role }}, {{ t.company }}</span>
+                    </div>
+                </div>
+                <div class="ts-stars" aria-label="5 out of 5 stars">
+                    @for (s of [1,2,3,4,5]; track s) {
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    }
+                </div>
+            </article>
+            }
+        </div>
+    </div>
+</section>

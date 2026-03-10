@@ -1,0 +1,108 @@
+:host {
+  display: block;
+}
+
+.testimonials {
+  background: var(--bg-light);
+  padding: var(--section-pad);
+}
+
+.ts-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.ts-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  position: relative;
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+  }
+}
+
+.ts-quote {
+  color: var(--primary);
+}
+
+.ts-text {
+  font-size: 0.97rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  flex: 1;
+  font-style: italic;
+}
+
+.ts-author {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.ts-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+}
+
+.ts-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.ts-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.ts-role {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.ts-stars {
+  display: flex;
+  gap: 0.15rem;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .ts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials {
+    padding: 3.5rem 1rem;
+  }
+}

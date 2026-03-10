@@ -1,0 +1,80 @@
+<!-- Floating trigger button -->
+<button class="chat-trigger" (click)="toggle()" [class.open]="isOpen()" aria-label="Open enquiry chatbot">
+    @if (!isOpen()) {
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+        <path
+            d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+    </svg>
+    @if (hasUnread()) {
+    <span class="unread-dot"></span>
+    }
+    } @else {
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+    }
+</button>
+
+<!-- Chat window -->
+@if (isOpen()) {
+<div class="chat-window" role="dialog" aria-label="Enquiry chatbot">
+    <!-- Header -->
+    <div class="chat-header">
+        <div class="chat-avatar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+            </svg>
+        </div>
+        <div class="chat-header-info">
+            <span class="chat-name">Acchub Assistant</span>
+            <span class="chat-status">
+                <span class="status-dot"></span>Online
+            </span>
+        </div>
+        @if (step() === 'done') {
+        <button class="chat-restart" (click)="restart()" title="New enquiry">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="1 4 1 10 7 10" />
+                <path d="M3.51 15a9 9 0 1 0 .49-4.5" />
+            </svg>
+        </button>
+        }
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-body">
+        @for (msg of messages(); track $index) {
+        <div class="msg-wrap" [class.user]="msg.from === 'user'">
+            <div class="msg-bubble" [class.bot-bubble]="msg.from === 'bot'" [class.user-bubble]="msg.from === 'user'">
+                {{ msg.text }}
+            </div>
+        </div>
+        }
+
+        <!-- Service option buttons -->
+        @if (showServiceButtons()) {
+        <div class="service-btns">
+            @for (svc of services; track svc) {
+            <button class="svc-btn" (click)="selectService(svc)">{{ svc }}</button>
+            }
+        </div>
+        }
+    </div>
+
+    <!-- Input area -->
+    @if (showInput()) {
+    <div class="chat-footer">
+        <input class="chat-input" [placeholder]="step() === 'name' ? 'Type your name...' : 'Phone or email...'"
+            [value]="inputValue()" (input)="inputValue.set($any($event.target).value)" (keydown)="onKeydown($event)"
+            autofocus />
+        <button class="send-btn" (click)="sendMessage()" aria-label="Send">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+        </button>
+    </div>
+    }
+</div>
+}

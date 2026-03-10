@@ -1,0 +1,99 @@
+<section class="services" id="services">
+    <!-- Hero banner -->
+    <div class="services-hero">
+        <div class="services-hero-inner">
+            <span class="section-label">What We Offer</span>
+            <h2 class="section-title">Comprehensive Financial Services<br><span class="accent-text">Tailored for Your
+                    Business</span></h2>
+            <p class="section-subtitle">Acchub Capital &amp; Compliance provides expert accounting, tax, and finance
+                services designed to drive clarity, compliance, and growth.</p>
+        </div>
+    </div>
+
+    <!-- Service category overview cards -->
+    <div class="categories-grid">
+        @for (cat of categories; track cat.label) {
+        <div class="category-card">
+            <div class="cat-icon" [innerHTML]="cat.icon"></div>
+            <div class="cat-label">{{ cat.label }}</div>
+            <h3 class="cat-title">{{ cat.title }}</h3>
+            <p class="cat-desc">{{ cat.description }}</p>
+            <ul class="cat-items">
+                @for (item of cat.items; track item) {
+                <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    {{ item }}
+                </li>
+                }
+            </ul>
+            <a [href]="cat.anchor" class="cat-link">
+                View all {{ cat.label }} services
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+        }
+    </div>
+
+    <!-- Accounting Details -->
+    <div class="service-section" id="accounting">
+        <div class="service-section-header">
+            <span class="section-label">01 — Accounting</span>
+            <h2 class="section-title">Accounting Services</h2>
+            <p class="section-subtitle">We ensure your books are not just maintained, but strategically managed to
+                support informed decision-making and sustainable growth.</p>
+        </div>
+        <div class="detail-grid">
+            @for (svc of accountingServices; track svc.num) {
+            <div class="detail-card">
+                <span class="detail-num">{{ svc.num }}</span>
+                <h4 class="detail-title">{{ svc.title }}</h4>
+                <p class="detail-desc">{{ svc.desc }}</p>
+            </div>
+            }
+        </div>
+    </div>
+
+    <!-- Tax Details -->
+    <div class="service-section alt-bg" id="tax">
+        <div class="service-section-header">
+            <span class="section-label">02 — Tax</span>
+            <h2 class="section-title">Tax Services</h2>
+            <p class="section-subtitle">Comprehensive tax compliance, planning, and advisory to minimize liabilities
+                while keeping you fully compliant.</p>
+        </div>
+        <div class="detail-grid">
+            @for (svc of taxServices; track svc.num) {
+            <div class="detail-card">
+                <span class="detail-num">{{ svc.num }}</span>
+                <h4 class="detail-title">{{ svc.title }}</h4>
+                <p class="detail-desc">{{ svc.desc }}</p>
+            </div>
+            }
+        </div>
+    </div>
+
+    <!-- Finance Details -->
+    <div class="service-section" id="finance">
+        <div class="service-section-header">
+            <span class="section-label">03 — Finance</span>
+            <h2 class="section-title">Finance Services</h2>
+            <p class="section-subtitle">Support for managing, arranging, and optimizing financial resources for
+                stability and expansion.</p>
+        </div>
+        <div class="detail-grid">
+            @for (svc of financeServices; track svc.num) {
+            <div class="detail-card">
+                <span class="detail-num">{{ svc.num }}</span>
+                <h4 class="detail-title">{{ svc.title }}</h4>
+                <p class="detail-desc">{{ svc.desc }}</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
