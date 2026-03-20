@@ -2,11 +2,12 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 interface Testimonial {
   name: string;
-  role: string;
+  // role: string;
   company: string;
   text: string;
   initials: string;
   color: string;
+  logo?: string;
 }
 
 @Component({
@@ -19,36 +20,36 @@ interface Testimonial {
 export class Testimonials {
   protected readonly testimonials: Testimonial[] = [
     {
-      name: 'Rajesh Mehta',
-      role: 'Managing Director',
-      company: 'Mehta Traders',
-      text: 'Acchub Capital has completely transformed how we manage our finances. Their team is responsive, accurate, and deeply knowledgeable. Filing taxes has never been this stress-free!',
-      initials: 'RM',
+      name: 'Anil Sangewar',
+      company: 'Civil Design Studio',
+      text: 'We have significantly improved customer engagement and lead management for our builder and developer projects. The platform has streamlined our communication, making it easier to connect with clients and convert inquiries into successful deals.',
+      initials: 'AS',
       color: '#0f2d52',
+      logo: 'assets/images/testimonials/civil-design-studio.jpeg',
     },
     {
-      name: 'Priya Sharma',
-      role: 'CEO',
-      company: 'InnoTech Solutions',
-      text: 'The GST compliance support from Acchub is exceptional. They proactively flag issues before they become problems. Highly recommend their services to any growing business.',
-      initials: 'PS',
+      name: 'Sunita Wazalwar',
+      company: 'Ramkrishna Authentic Veg',
+      text: 'Our restaurant has seen a noticeable boost in customer engagement and repeat orders. The system helps us manage customer interactions efficiently and enhances the overall dining experience for our customers.',
+      initials: 'SW',
       color: '#e8a020',
+      logo: 'assets/images/testimonials/ramkrishna-av.jpeg',
     },
     {
-      name: 'Amit Joshi',
-      role: 'Founder',
-      company: 'Joshi Enterprises',
-      text: 'Getting a business loan always seemed daunting until Acchub handled our project finance. The CMA data and bank liaison was seamless. We secured funding within weeks!',
-      initials: 'AJ',
+      name: 'Shruti Wazalwar',
+      company: `Mannu's Missal Co.`,
+      text: 'This solution has helped us attract more customers and improve our service experience. Managing orders and engaging with customers has become much easier, leading to better customer satisfaction and business growth.',
+      initials: 'SW',
       color: '#1a4a7a',
+      logo: 'assets/images/testimonials/mmc.jpeg',
     },
     {
-      name: 'Sunita Kulkarni',
-      role: 'Director',
-      company: 'SKC Manufacturing',
-      text: 'Their MIS reporting has given us clear visibility into our profitability and cost centers. Decisions that used to take days now take hours. Outstanding professional service.',
-      initials: 'SK',
+      name: 'Amit Patel',
+      company: 'Smart Flyer Holiday Pvt Ltd',
+      text: 'The platform has made ticket booking and tour package management seamless. It has improved our customer interaction, increased booking efficiency, and helped us deliver a smoother travel experience to our clients.',
+      initials: 'AP',
       color: '#0d3a6e',
+      logo: 'assets/images/testimonials/smart-flyer.png',
     },
   ];
 }

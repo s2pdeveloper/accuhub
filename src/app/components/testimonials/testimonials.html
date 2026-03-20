@@ -19,10 +19,14 @@
                 </div>
                 <p class="ts-text">{{ t.text }}</p>
                 <div class="ts-author">
+                    @if (t.logo) {
+                    <img src="{{ t.logo }}" alt="{{ t.company }} logo" class="ts-logo" />
+                    } @else {
                     <div class="ts-avatar" [style.background]="t.color" aria-hidden="true">{{ t.initials }}</div>
+                    }
                     <div class="ts-info">
                         <span class="ts-name">{{ t.name }}</span>
-                        <span class="ts-role">{{ t.role }}, {{ t.company }}</span>
+                        <span class="ts-role">{{ t.company }}</span>
                     </div>
                 </div>
                 <div class="ts-stars" aria-label="5 out of 5 stars">

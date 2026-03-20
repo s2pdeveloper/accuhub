@@ -3,15 +3,38 @@
 }
 
 .services {
-    background: var(--bg-white);
+    background:
+        var(--bg-mesh-cool),
+        var(--bg-mesh-warm),
+        var(--bg-white);
+    background-size: 100% 100%, 100% 100%, auto;
+    position: relative;
 }
 
 /* Hero banner */
 .services-hero {
-    background: var(--bg-light);
+    background:
+        var(--bg-aurora),
+        var(--bg-dot),
+        var(--bg-light);
+    background-size: 100% 100%, var(--bg-dot-size), auto;
     padding: 5rem 1.5rem 4rem;
     text-align: center;
     border-bottom: 1px solid var(--border);
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 260px;
+        height: 260px;
+        background: radial-gradient(circle, rgba(232, 160, 32, 0.045) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
 }
 
 .services-hero-inner {
@@ -38,8 +61,10 @@
 }
 
 .category-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(226, 232, 240, 0.6);
     border-radius: var(--radius-lg);
     padding: 2rem;
     display: flex;
@@ -63,9 +88,9 @@
     }
 
     &:hover {
-        box-shadow: var(--shadow-lg);
+        box-shadow: 0 10px 40px rgba(15, 45, 82, 0.1), 0 4px 16px rgba(232, 160, 32, 0.08);
         transform: translateY(-4px);
-        border-color: rgba(232, 160, 32, 0.2);
+        border-color: rgba(232, 160, 32, 0.25);
 
         &::before {
             opacity: 1;
@@ -150,10 +175,18 @@
 /* Detail sections */
 .service-section {
     padding: 5rem 1.5rem;
-    background: var(--bg-white);
+    background:
+        var(--bg-dot),
+        var(--bg-white);
+    background-size: var(--bg-dot-size), auto;
+    position: relative;
 
     &.alt-bg {
-        background: var(--bg-light);
+        background:
+            var(--bg-mesh-blue),
+            var(--bg-dot),
+            var(--bg-light);
+        background-size: 100% 100%, var(--bg-dot-size), auto;
     }
 }
 
@@ -163,6 +196,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+
+    .section-subtitle {
+        max-width: 100%;
+    }
 }
 
 .detail-grid {
